@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+p {
+    text-align: center;
+}
+.scoreBoard {
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
+    justify-content: center;
+}
+#score {
+    position: absolute;
+    width: 20rem;
+    left: calc(50% - 10rem);
+    font-size: 6rem;
+    text-align: center;
+    margin-right: 3rem;
+}
+#reset {
+    position: absolute;
+    left: calc(85% - 1.5rem);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: red;
+}
+#reset span {
+    width: 10rem;
+    display: inline-block;
+    position: relative;
+    top: 3rem;
+    left: -3.5rem;
+    font-size: .8rem;
+}
+.juego {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100vw - 2rem);
+    margin: 10rem 1rem 0 1rem;
+}
+.juego button {
+    width: 30%;
+    height: 30vw;
+    background-color: pink;
+    border-radius: 3rem;
+    border: none;
+}
+.juego button:hover {
+    background-color: rgb(212, 108, 126);
+}
+#puntaje {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+#rock{
+    background-image: '';
+}
+#paper {
+    width: 30%;
+}
+#scissors {
+    width: 30%;
+} 

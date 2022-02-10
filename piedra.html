@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piedra, papel, tijeras!</title>
+    <link rel="stylesheet" href="./papel.css">
+    <title>Rock, paper, scissors! - Play againsts the CPU</title>
 </head>
 <body>
+    <header class="titulo">
+        <h1>Rock / Paper / Scissors</h1>
+    </header>
+    <section class="scoreBoard">
+        <p id="score">[0 : 0]</p>
+        <button id ="reset" onclick="reset();"> <span>Click here to reset the Score Board!</span></button>
+    </section>
+    <section class="juego">
+        <button id="Rock" onclick="quienGana(rock,eleccionCPU());">Rock</button>
+        <button id="Paper" onclick="quienGana(paper,eleccionCPU());">Paper</button>
+        <button id="Scissors" onclick="quienGana(scissors,eleccionCPU());">Scissors</button>
+    </section>
     <script src="tijeras.js"></script>
 </body>
 </html>
