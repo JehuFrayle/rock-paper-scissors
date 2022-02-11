@@ -1,11 +1,11 @@
-var usuario;
-var maquina;
+let usuario;
+let maquina;
 
-var rock = "piedra";
-var paper = "papel";
-var scissors = "tijeras";
+const rock = "piedra";
+const paper = "papel";
+const scissors = "tijeras";
 
-var scoreBoard = document.getElementById("score");
+const scoreBoard = document.getElementById("score");
 
 function makeCounter(){
     let counter = 0;
@@ -74,7 +74,7 @@ function quienGana(usr, cpu) {
         }
     }
     console.log(`CPU: ${cpuScore.getValue()}, USER: ${usrScore.getValue()}`)
-    scoreBoard.innerHTML = `[${usrScore.getValue()} : ${cpuScore.getValue()}]`;
+    scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
 
 }
 
@@ -99,5 +99,5 @@ function eleccionCPU() {
 function reset() {
     usrScore.toZero();
     cpuScore.toZero();
-    scoreBoard.innerHTML = `[${usrScore.getValue()} : ${cpuScore.getValue()}]`;
+    scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
 }
