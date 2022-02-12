@@ -1,9 +1,15 @@
 let usuario;
 let maquina;
 
-const rock = "piedra";
-const paper = "papel";
-const scissors = "tijeras";
+class player {
+    constructor(name, winsTo) {
+        this.name = name;
+        this.winsTo = winsTo;
+    }
+}
+const rock = new player('Rock', 'Scissors');
+const paper = new player('Paper', 'Rock');
+const scissors = new player('Scissors', 'Paper');
 
 const scoreBoard = document.getElementById("score");
 
@@ -32,68 +38,37 @@ function makeCounter(){
 const cpuScore = makeCounter();
 const usrScore = makeCounter();
 
+function whoWins(usr, cpu) {
+    if (usr != cpu){
+        if (usr.winsTo.includes(cpu.name)){
+            usrScore.increase();
+            scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
+            alert('Ganaste!');
+        }
+        else {
+            cpuScore.increase();
+            scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
+            alert('Perdiste!');
+        }
 
-function quienGana(usr, cpu) {
-    if (usr == "piedra") {
-        if (cpu == "piedra") {
-            alert('Empate!');
-        }
-        else if (cpu == "papel") {
-            alert('Perdiste!');
-            cpuScore.increase();
-        }
-        else if (cpu == "tijeras") {
-            alert('Ganaste!');
-            usrScore.increase();
-        }
     }
-    if (usr == "papel") {
-        if (cpu == "piedra") {
-            alert('Ganaste!');
-            usrScore.increase();
-        }
-        else if (cpu == "papel") {
-            alert('Empate!')
-        }
-        else if (cpu == "tijeras") {
-            alert('Perdiste!')
-            cpuScore.increase();
-        }
-    }
-    if (usr == "tijeras") {
-        if (cpu == "piedra") {
-            alert('Perdiste!');
-            cpuScore.increase();
-        }
-        else if (cpu == "papel") {
-            alert('Ganaste!')
-            usrScore.increase();
-        }
-        else if (cpu == "tijeras") {
-            alert('Empate!')
-        }
+    else {
+        alert('Empate');
     }
     console.log(`CPU: ${cpuScore.getValue()}, USER: ${usrScore.getValue()}`)
     scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
 
 }
 
-function eleccionCPU() {
-    var numeroAleatorio = Math.floor((Math.random() * (4-1)) +1); // genera numero entre el 1 y el 3
-    if(numeroAleatorio == 1) {
-        maquina = "piedra";
-    }
-    else if (numeroAleatorio == 2) {
-        maquina = "papel";
-    }
-    else if (numeroAleatorio == 3) {
-        maquina = "tijeras";
-    }
+function CPUElection() {
+    let randomNumber = Math.floor(Math.random() * (3)); // genera numero entre el 0 y el 2
+    const election = [rock, paper, scissors]
 
-    console.log(numeroAleatorio);
-    console.log ("La maquina ha escogido: " + maquina);
+    machine = election[randomNumber];
+    console.log(randomNumber);
+    console.log ("The machine has selected: " + machine.name);
 
-    return maquina;
+    return machine;
 }
 
 function reset() {
