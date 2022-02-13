@@ -54,16 +54,19 @@ p {
 .juego {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: calc(100vw - 2rem);
     margin: 10rem 1rem 0 1rem;
 }
 .juego button {
-    width: 25%;
-    height: 25vw;
-    background-color: pink;
-    border-radius: 3rem;
+    width: 20%;
+    height: 20vw;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12.5vw;
     border: none;
 }
 .juego button:hover {
@@ -73,12 +76,35 @@ p {
     width: 100%;
     margin-bottom: 5rem;
 }
-#rock{
-    background-image: '';
+#Rock{
+    background-image: url('../assets/rock.png');
 }
-#paper {
-    width: 30%;
+#Paper {
+    background-image: url('../assets/paper.png');
 }
-#scissors {
-    width: 30%;
+#Scissors {
+    background-image: url('../assets/scissors.png');
 } 
+.credits {
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+    display: grid;
+    width: calc(100% - 2rem);
+    height: auto;
+    grid-template-columns: auto auto;
+}
+.credits a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+.credits .author {
+    margin-right: 3rem;
+}
+.credits .icons-by {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: end;
+}
