@@ -13,22 +13,18 @@ const scissors = new player('Scissors', 'Paper');
 
 const scoreBoard = document.getElementById("score");
 
-function makeCounter(){
+function makeCounter() {
     let counter = 0;
 
     return {
-        increase: function(){
-            counter ++;
+        increase: function () {
+            counter++;
             return counter;
         },
-        decrease: function(){
-            counter = counter -1;
+        getValue: function () {
             return counter;
         },
-        getValue: function(){
-            return counter;
-        },
-        toZero: function(){
+        toZero: function () {
             counter = 0;
             return counter;
         }
@@ -39,8 +35,8 @@ const cpuScore = makeCounter();
 const usrScore = makeCounter();
 
 function whoWins(usr, cpu) {
-    if (usr != cpu){
-        if (usr.winsTo.includes(cpu.name)){
+    if (usr != cpu) {
+        if (usr.winsTo.includes(cpu.name)) {
             usrScore.increase();
             scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
             alert('Ganaste!');
@@ -66,7 +62,7 @@ function CPUElection() {
 
     machine = election[randomNumber];
     console.log(randomNumber);
-    console.log ("The machine has selected: " + machine.name);
+    console.log("The machine has selected: " + machine.name);
 
     return machine;
 }
