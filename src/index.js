@@ -1,3 +1,4 @@
+import './style.css';
 let usuario;
 let maquina;
 

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+p {
+    text-align: center;
+}
+.scoreBoard {
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
+    justify-content: center;
+}
+#score {
+    width: auto;
+    font-size: 6rem;
+    text-align: center;
+    margin-right: 3rem;
+    justify-self: center;
+}
+#reset {
+    position: absolute;
+    left: calc(85% - 1.5rem);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: red;
+}
+#reset span {
+    width: 10rem;
+    display: inline-block;
+    position: relative;
+    top: 3rem;
+    left: -3.5rem;
+    font-size: .8rem;
+}
+.juego {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: calc(100vw - 2rem);
+    margin: 10rem 1rem 0 1rem;
+}
+.juego button {
+    width: 20%;
+    height: 20vw;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12.5vw;
+    border: none;
+}
+.juego button:hover {
+    background-color: rgb(212, 108, 126);
+}
+#puntaje {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+#Rock{
+    background-image: url(f5a3f2e3d88aa1c4a392.png);
+}
+#Paper {
+    background-image: url(040e8228855eaa228631.png);
+}
+#Scissors {
+    background-image: url(046e60d0bdc9f2901ad0.png);
+} 
+.credits {
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+    display: grid;
+    width: calc(100% - 2rem);
+    height: auto;
+    grid-template-columns: auto auto;
+}
+.credits a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+.credits .author {
+    margin-right: 3rem;
+}
+.credits .icons-by {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: end;
+}
