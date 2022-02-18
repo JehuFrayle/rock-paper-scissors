@@ -28,12 +28,11 @@ p {
     justify-content: center;
 }
 #score {
-    position: absolute;
-    width: 20rem;
-    left: calc(50% - 10rem);
+    width: auto;
     font-size: 6rem;
     text-align: center;
     margin-right: 3rem;
+    justify-self: center;
 }
 #reset {
     position: absolute;
