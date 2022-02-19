@@ -1,6 +1,4 @@
 import './style.css';
-let usuario;
-let maquina;
 
 class player {
     constructor(name, winsTo) {
@@ -13,6 +11,12 @@ const paper = new player('Paper', 'Rock');
 const scissors = new player('Scissors', 'Paper');
 
 const scoreBoard = document.getElementById("score");
+
+document.getElementById('Rock').onclick = function() {whoWins(rock, CPUElection())};
+document.getElementById('Paper').onclick = function() {whoWins(paper, CPUElection())};
+document.getElementById('Scissors').onclick = function() {whoWins(scissors, CPUElection())};
+
+document.getElementById('reset').onclick = function() {reset()};
 
 function makeCounter() {
     let counter = 0;
@@ -61,7 +65,7 @@ function CPUElection() {
     let randomNumber = Math.floor(Math.random() * (3)); // genera numero entre el 0 y el 2
     const election = [rock, paper, scissors]
 
-    machine = election[randomNumber];
+    let machine = election[randomNumber];
     console.log(randomNumber);
     console.log("The machine has selected: " + machine.name);
 
