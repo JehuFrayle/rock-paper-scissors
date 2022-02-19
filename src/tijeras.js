@@ -13,6 +13,11 @@ const scissors = new player('Scissors', 'Paper');
 
 const scoreBoard = document.getElementById("score");
 
+document.getElementById('Rock').onclick = function() {whoWins(rock, CPUElection())};
+document.getElementById('Paper').onclick = function() {whoWins(paper, CPUElection())};
+document.getElementById('Scissors').onclick = function() {whoWins(scissors, CPUElection())};
+document.getElementById('reset').onclick = function() {reset()};
+
 function makeCounter() {
     let counter = 0;
 
