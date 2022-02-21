@@ -1,6 +1,4 @@
 import './style.css';
-let usuario;
-let maquina;
 
 class player {
     constructor(name, winsTo) {
@@ -66,7 +64,7 @@ function CPUElection() {
     let randomNumber = Math.floor(Math.random() * (3)); // genera numero entre el 0 y el 2
     const election = [rock, paper, scissors]
 
-    machine = election[randomNumber];
+    let machine = election[randomNumber];
     console.log(randomNumber);
     console.log("The machine has selected: " + machine.name);
 
