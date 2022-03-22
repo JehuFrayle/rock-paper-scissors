@@ -8,10 +8,16 @@ html {
     font-family: 'Ubuntu', sans-serif;
 }
 body {
-    background-color: blanchedalmond;
-    display: flex;
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%,
+     rgba(42,139,173,1) 35%, rgba(0,212,255,1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 h1{
     text-align: center;
@@ -31,7 +37,6 @@ p {
     width: auto;
     font-size: 6rem;
     text-align: center;
-    margin-right: 3rem;
     justify-self: center;
 }
 #reset {
@@ -40,7 +45,10 @@ p {
     width: 3rem;
     height: 3rem;
     border-radius: 1.5rem;
-    background-color: red;
+    background-color: #FA4872;
+}
+#reset:hover {
+    background-color: #AD2142;
 }
 #reset span {
     width: 10rem;
@@ -55,21 +63,26 @@ p {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: calc(100vw - 2rem);
-    margin: 10rem 1rem 0 1rem;
+    width: calc(100% - 2rem);
+    margin: 10rem 0 1rem 1rem;
+    padding-bottom: 1.5rem;
 }
 .juego button {
     width: 20%;
     height: 20vw;
-    background-color: transparent;
+    background-color: #2FC5FA;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 12.5vw;
+    border-radius: 20%;
     border: none;
+
+    transition: transform 1s;
 }
 .juego button:hover {
-    background-color: rgb(212, 108, 126);
+    background-color: #FA4872;
+    transform: scale(110%);
+    transition: transform 500ms;
 }
 #puntaje {
     width: 100%;
@@ -87,19 +100,19 @@ p {
 .credits {
     position: absolute;
     bottom: 0;
-    margin: 1rem;
-    display: grid;
-    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     height: auto;
-    grid-template-columns: auto auto;
+
+    background-color: #FAF161;
 }
 .credits a {
     text-decoration: none;
     color: black;
+    font-weight: 400;
     font-size: 1rem;
-}
-.credits .author {
-    margin-right: 3rem;
+    margin: 0 1rem 0 1rem;
 }
 .credits .icons-by {
     display: flex;

@@ -43,17 +43,20 @@ function whoWins(usr, cpu) {
         if (usr.winsTo.includes(cpu.name)) {
             usrScore.increase();
             scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
-            alert('You Won!');
+            alert(`The machine selected: ${cpu.name}.
+            You won!`);
         }
         else {
             cpuScore.increase();
             scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
-            alert('You Lost!');
+            alert(`The machine selected: ${cpu.name}.
+            You lost!`);
         }
 
     }
     else {
-        alert('Draw');
+        alert(`The machine also selected: ${cpu.name}.
+        Draw!`);
     }
     console.log(`CPU: ${cpuScore.getValue()}, USER: ${usrScore.getValue()}`)
     scoreBoard.innerHTML = `[ ${usrScore.getValue()} : ${cpuScore.getValue()} ]`;
