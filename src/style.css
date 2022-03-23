@@ -6,15 +6,16 @@
 html {
     font-size: 62.5%;
     font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 body {
-    background: rgb(2,0,36);
     background: linear-gradient(45deg, rgba(2,0,36,1) 0%,
      rgba(42,139,173,1) 35%, rgba(0,212,255,1) 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-     display: flex;
+    display: flex;
     flex-direction: column;
     min-width: 100vw;
     min-height: 100vh;
@@ -62,7 +63,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
     width: calc(100% - 2rem);
     margin: 10rem 0 1rem 1rem;
     padding-bottom: 1.5rem;
@@ -112,7 +112,6 @@ p {
     color: black;
     font-weight: 400;
     font-size: 1rem;
-    margin: 0 1rem 0 1rem;
 }
 .credits .icons-by {
     display: flex;
