@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple game of rock, paper and scissors">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (min-width: 768px)" href="./tabletStyle.css">
+    <link rel="icon" href="https://projects.jehufrayle.com/resources/favicon.png" type="image/png">
     <title>Rock, paper, scissors! - Play againsts the CPU</title>
 </head>
 
@@ -15,27 +18,27 @@
     <header class="titulo">
         <h1>Rock | Paper | Scissors</h1>
     </header>
-    <section class="scoreBoard">
-        <p id="score">[ 0 : 0 ]</p>
-        <button id="reset"> <span>Click here to reset the Score Board!</span></button>
-    </section>
-    <section class="juego">
-        <button id="Rock"></button>
-        <button id="Paper"></button>
-        <button id="Scissors"></button>
-    </section>
+    <main>
+        <section class="scoreBoard">
+            <p id="score">[ 0 : 0 ]</p>
+        </section>
+        <section class="juego">
+            <button id="Rock"></button>
+            <button id="Paper"></button>
+            <button id="Scissors"></button>
+        </section>
+        <button id="reset"> <span>Restart!</span></button>
+    </main>
 
     <footer class="credits">
-        <a class="author" href="https://jehufrayle.com">Made by Jehú Frayle</a>
-        <div class="icons-by">
-            <a href="https://www.flaticon.com/free-icons/miscellaneous" title="miscellaneous icons">Miscellaneous icons
-                created by Alfian Dwi Hartanto - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/fist" title="fist icons">Fist icons created by DinosoftLabs -
-                Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/hand" title="hand icons">Hand icons created by Pixel perfect -
-                Flaticon</a>
-        </div>
+        <p>Made by <a class="author" href="https://jehufrayle.com">Jehú Frayle</a> and Alezza</p>
     </footer>
+
+    <div class="modal-overlay">
+        <article class="modal-content">
+
+        </article>
+    </div>
 </body>
 
 </html>

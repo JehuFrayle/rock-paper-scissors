@@ -1,0 +1,21 @@
+/* Set media query for tablet */
+@media screen and (min-width: 768px) {
+    header {
+        font-size: 3rem;
+    }
+    
+    .juego {
+        justify-content: space-around;
+        overflow: hidden;
+    }
+    .juego button {
+        width: 30%;
+    }
+    
+    .scoreBoard #score {
+        font-size: 6rem;
+    }
+    button#reset {
+        font-size: 4.5rem;
+    }
+}

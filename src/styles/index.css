@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Gochi Hand', cursive;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #00214a;
+    opacity: 1;
+    background-image:  radial-gradient(#e2f3fb 2px, transparent 2px), radial-gradient(#e2f3fb 2px, #00214a 2px);
+    background-size: 80px 80px;
+    background-position: 0 0,40px 40px;
+    color: #e2f3fb;
+}
+header {
+    width: 100%;
+    height: 10rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    filter: drop-shadow(0 0 .5rem #04bbec);
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 15rem);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+
+.scoreBoard {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.scoreBoard #score {
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #e2f3fb;
+    color: #00214A;
+    font-size: 4rem;
+    filter: drop-shadow(0 0 .5rem #04bbec);
+}
+
+.juego {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.juego button {
+    width: 100%;
+    max-width: 325px;
+    aspect-ratio: 1/1;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    filter: drop-shadow(0 0 .5rem #04bbec);
+
+    transition: all 250ms ease;
+}
+
+.juego button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 1rem #04bbec);
+}
+
+button#reset {
+    width: auto;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    background: none;
+    color: #e2f3fb;
+    font-size: 2.5rem;
+    font-family: inherit;
+    transform: scale(1);
+    box-shadow: 0 0 .5rem #EA25B5;
+    transition: all 250ms ease;
+}
+button#reset:hover {
+    cursor: pointer;
+    background-color: #EA25B5;
+    box-shadow: 0 0 1rem #EA25B5;
+    color: #00214A;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #0d3f7c;
+    color: #e2f3fb;
+    width: 100%;
+    min-height: 5rem;
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer p {
+    filter: drop-shadow(0 0 1rem #04bbec);
+}
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 100;
+    visibility: hidden;
+
+    transform: scale(0);
+    transition: all 250ms ease;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal-overlay article {
+    width: 80%;
+    max-width: 500px;
+    min-height: 250px;
+    height: auto;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #e2f3fb;
+    color: #00214A;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    filter: drop-shadow(0 0 1rem #04bbec);
+}
+
+.modal-overlay article img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+.modal-overlay article img.win {
+    animation: win 1s ease-in-out infinite;
+}
+
+.modal-overlay article img.lose {
+    animation: lose 1s ease-in-out infinite;
+}
+
+.modal-overlay article img.tie {
+    animation: tie 1s ease-in-out infinite;
+}
+
+@keyframes win {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    33% {
+        transform: scale(1.1) rotate(15deg);
+    }
+
+    66% {
+        transform: scale(1.1) rotate(-15deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        transform: scale(1);
+    }
+}
+
+@keyframes lose {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes tie {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#puntaje {
+    width: 100%;
+}
+
+#Rock {
+    background-image: url('/src/assets/Piedra.svg');
+}
+
+#Paper {
+    background-image: url('/src/assets/Papel.svg');
+}
+
+#Scissors {
+    background-image: url('/src/assets/Tijera.svg');
+}
